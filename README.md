@@ -1,9 +1,14 @@
-# Simple Flask Test - Railway Deployment
+# Simple Calculator - Railway Deployment
 
-The **absolute simplest** working Flask app for Railway.
+A simple Flask calculator app for Railway - step 1 in building up to TBONTB.
+
+## Features
+- Frontend form for user input (two numbers)
+- Backend adds the numbers and returns the result
+- Minimal dependencies, easy to deploy
 
 ## Files
-- `main.py` - Flask app with single route
+- `main.py` - Flask app with calculator routes and HTML templates
 - `requirements.txt` - Python dependencies (Flask + gunicorn)
 - `nixpacks.toml` - Railway build configuration
 
@@ -43,15 +48,15 @@ python main.py
 - Gunicorn runs the Flask app in production mode
 - That's it!
 
-## What Changed from Your Setup?
-This version includes:
-1. ✅ `nixpacks.toml` - tells Railway how to run the app
-2. ✅ Proper PORT handling from environment variable
-3. ✅ `host='0.0.0.0'` - allows external connections
-4. ✅ Gunicorn for production serving
+## How It Works
+1. User visits the home page and sees a form with two number inputs
+2. User enters two numbers and clicks "Calculate"
+3. Backend receives the numbers via POST request
+4. Backend adds them and returns the result page
 
-Common mistakes that cause "Application failed to respond":
-- ❌ Missing nixpacks.toml or Procfile
-- ❌ Not binding to 0.0.0.0
-- ❌ Not reading PORT from environment
-- ❌ Using Flask dev server instead of gunicorn
+## Next Steps (TBONTB migration)
+This is step 1 of gradually adding backend functionality:
+- [x] Step 1: Simple adder (FE + minimal BE)
+- [ ] Step 2: Add more complex backend logic
+- [ ] Step 3: Add database connectivity
+- [ ] Step 4: Migrate TBONTB features one by one
